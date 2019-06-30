@@ -43,8 +43,7 @@ public class Manifest {
             System.out.println(p);
         }
         if (quantities.get(p) == 0) {
-       // if (quantities.get(p) == 0 ) {
-//        if (quantities.get(p) == 0 || p == null) {
+
             quantities.remove(p);
         }
         if (quantities.containsKey(p)) {
