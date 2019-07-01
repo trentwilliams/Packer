@@ -37,6 +37,7 @@ public class Manifest {
         }
     }
     
+    // removes products from manifest quantities and weight
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
             quantities.put(p,quantities.get(p)-1);

@@ -14,7 +14,9 @@ public class Packer {
         Box b = null;
         while (!m.isEmpty()) { // repeat until all items are packed
             if (b == null) {
-                b = new Box(d,c);
+                
+                //b = new Box(d,c);  swap c & d
+                b = new Box(c,d);
             }
             Product prodToAdd = m.getHeaviestUnder(b.remainingCapacity());
             if (prodToAdd == null) {
