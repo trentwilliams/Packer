@@ -40,13 +40,17 @@ public class Manifest {
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
             quantities.put(p,quantities.get(p)-1);
-            System.out.println(p);
+
+            // print line of item being removed
+            //System.out.println("in remove " + p);
         }
+        // FIX HERE
         if (quantities.get(p) == 0) {
 
-            quantities.remove(p);
+            quantities.remove(p); 
+            //byWeight.remove(p);
         }
-        if (quantities.containsKey(p)) {
+        if (!quantities.containsKey(p)) {
             byWeight.remove(p);
         }
     }
