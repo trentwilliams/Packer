@@ -17,6 +17,8 @@ public class Box {
         contents = new Manifest();
     }
     
+    
+    // adding a product to the box
     public void addProduct(Product product) {
         if (canFit(product)) {
             contents.addProduct(product, 1);
@@ -62,15 +64,22 @@ public class Box {
 
     
     public boolean canFit(Product p) {
-        return p.getWeight() < 40;
+        
+        System.out.println("box contents " + this.getWeight());
+        System.out.println("product " + p.getWeight());
+        
+        
+        //return p.getWeight() < 20;  comparing against 20 always
+        return p.getWeight() <= this.remainingCapacity();
+        
     }
     
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 40;
+        return (p.getWeight() * quantity) < 20;
     }
     
     public double remainingCapacity() {
-        return 40 - this.getWeight();
+        return 20 - this.getWeight();
     }
     
     public boolean isFragile() {

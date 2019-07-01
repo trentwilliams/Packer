@@ -37,18 +37,33 @@ public class Manifest {
         }
     }
     
-    // removes products from manifest quantities and weight
+    // removes products from manifest quantities and weight this  orignal 
+//    public void removeProduct(Product p) {
+//        if (quantities.containsKey(p) && quantities.get(p) > 0) {
+//            quantities.put(p,quantities.get(p)-1);
+//        }
+//        if (quantities.get(p) == 0) {
+//            quantities.remove(p);
+//        }
+//        if (quantities.containsKey(p)) {
+//            byWeight.remove(p);
+//        }
+//    }
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
             quantities.put(p,quantities.get(p)-1);
         }
-        if (quantities.get(p) == 0) {
+        //if (quantities.get(p) == 0) {  change 0 to null (returns null when not exist
+        if (quantities.get(p) == null) {
             quantities.remove(p);
         }
         if (quantities.containsKey(p)) {
             byWeight.remove(p);
         }
     }
+    
+    
+    
     
     public double getTotalWeight() {
         double weight = 0;
@@ -95,4 +110,5 @@ public class Manifest {
         return false;
     }
     
-
+    
+}
