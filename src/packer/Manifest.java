@@ -68,7 +68,8 @@ public class Manifest {
     public double getTotalWeight() {
         double weight = 0;
         for (Product p : quantities.keySet()) {
-            weight = quantities.get(p) * p.getWeight();
+            //weight = quantities.get(p) * p.getWeight();  not incrimenignt wight correcyly
+            weight += quantities.get(p) * p.getWeight();
         }
         return weight;
     }

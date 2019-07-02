@@ -33,18 +33,18 @@ public class Packer {
             }
             else {
             
+                //System.out.println("\nPacking "+ prodToAdd);
+                
                 // this modifies the weight.... not working correctly?
                 b.addProduct(prodToAdd);
-                System.out.println("\npacking " + prodToAdd ) ;
-               
+             
                 // Working correctly
                 m.removeProduct(prodToAdd);
-                System.out.println("\nmanifest after removing product \n\n"+m);
             }  
             
             
             //find out how much space left in box
-            System.out.println("capacity after add " + b.remainingCapacity());
+            //System.out.println("capacity after add " + b.remainingCapacity());
 
             
             
