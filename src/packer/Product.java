@@ -36,7 +36,8 @@ public class Product {
      * @return the hazardous
      */
     public boolean isHazardous() {
-        return false;
+        //return false;   not returning varible
+        return hazardous;
     }
 
     /**
