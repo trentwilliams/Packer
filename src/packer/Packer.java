@@ -23,7 +23,7 @@ public class Packer {
 
             
             //find out how much space left in box
-            //System.out.println("capacity before add " + b.remainingCapacity());
+            System.out.println("capacity before add " + b.remainingCapacity());
             //System.out.println("current " + b.getWeight());
             //meets criteria
             Product prodToAdd = m.getHeaviestUnder(b.remainingCapacity());
@@ -33,13 +33,16 @@ public class Packer {
             }
             else {
             
-                //System.out.println("\nPacking "+ prodToAdd);
+                System.out.println("\nPacking "+ prodToAdd);
                 
                 // this modifies the weight.... not working correctly?
                 b.addProduct(prodToAdd);
              
                 // Working correctly
                 m.removeProduct(prodToAdd);
+                
+                System.out.println("\nMANIFEST (to be packed):\n"+m);
+                
             }  
             
             
