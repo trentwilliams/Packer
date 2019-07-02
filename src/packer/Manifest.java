@@ -54,9 +54,20 @@ public class Manifest {
             quantities.put(p,quantities.get(p)-1);
         }
         //if (quantities.get(p) == 0) {  change 0 to null (returns null when not exist
+        
+        /// or is null????????????????????????????????????
         if (quantities.get(p) == 0) {
             quantities.remove(p);
         }
+        
+//        if (quantities.get(p) == null) {
+//            quantities.remove(p);
+//        }
+        
+        
+        
+        
+        
         //if (quantities.containsKey(p)) {  if not exists
         if (!quantities.containsKey(p)) {
             byWeight.remove(p);
@@ -111,6 +122,9 @@ public class Manifest {
         }
         return false;
     }
+    
+    //*****  HAZARDOUS ITEMS
+    
     
     
 }
