@@ -27,12 +27,17 @@ public class Customer {
     }
 
     public Address getClosestAddressTo(Depot d) {
-        double bestDistance = Double.MAX_VALUE;
+        double bestDistance = Double.MAX_VALUE; 
         Address bestAddress = null;
         for (Address a : addresses) {
             double distance = a.getCoordinates().companyDistanceTo(d.getCoordinates());
+            //System.out.println("distance "+distance);
             if (distance < bestDistance) {
+                //System.out.println("best");
+                // not updating best distance
+                bestDistance=distance;  
                 bestAddress = a;
+                
             }
         }
         return bestAddress;

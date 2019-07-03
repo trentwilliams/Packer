@@ -33,6 +33,7 @@ public class AddressTest {
      */
     @Test
     public void testToString() {
+        System.out.println("add"+testAddress2);
         System.out.println("toString");
         assertEquals("1 First St\nAplace\nCitadel City\nA111", testAddress1.toString());
         assertEquals("123 Count St\nBrooklyn\nWelling Town\nB222", testAddress2.toString());

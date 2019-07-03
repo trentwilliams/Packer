@@ -10,10 +10,12 @@ public class Box {
     private Manifest contents;
     private Customer customer;
     private Depot depot; 
+    private double capacity; 
 
-    public Box(Customer customer, Depot depot) {
+    public Box(Customer customer, Depot depot,double capacity) {
         this.customer = customer;
         this.depot = depot;
+        this.capacity=capacity;
         contents = new Manifest();
     }
     
@@ -75,11 +77,11 @@ public class Box {
     }
     
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 20;
+        return (p.getWeight() * quantity) < this.capacity;
     }
     
     public double remainingCapacity() {
-        return 20 - this.getWeight();
+        return this.capacity - this.getWeight();
     }
     
     public boolean isFragile() {

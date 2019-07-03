@@ -5,19 +5,23 @@
  */
 package packer;
 
-
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 
 /**
  *
- * @author bunta
+ * @author trent
  */
-public class DepotTest {
+public class BoxTest {
     
-    // Test data
+    
+     // Test data
+    Coordinates testCoordinates0 = new Coordinates(1, 1);
+    Address testAddress0 = new Address("number", "street", "suburb", "city", testCoordinates0);
+    Customer customer0  = new Customer("test",testAddress0);
+
+
     Coordinates testCoordinates1 = new Coordinates(0,0);
     Coordinates testCoordinates2 = new Coordinates(30,40);
     Coordinates testCoordinates3 = new Coordinates(1000, 2000);
@@ -27,32 +31,35 @@ public class DepotTest {
     Depot testDepot1 = new Depot("City Depot", testAddress1);
     Depot testDepot2 = new Depot("Suburbs Depot", testAddress2);
     Depot testDepot3 = new Depot("Country Depot", testAddress3);
+    
+    
+    Box box0 = new Box(customer0, testDepot1,20.0);
+    Box box1 = new Box(customer0, testDepot1,40.0);
+    
+
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Testing Depot class...");
-    }
-    
-    /**
-     * Test of getName method, of class Depot.
-     */
-    @Test
-    public void testGetName() {
-        System.out.println("toString");
-        assertEquals("City Depot", testDepot1.getName());
-        assertEquals("Suburbs Depot", testDepot2.getName());
-        assertEquals("Country Depot", testDepot3.getName());
-    }
+        System.out.println("Testing Box class...");
+        
 
-    /**
-     * Test of getCoordinates method, of class Depot.
-     */
-    @Test
-    public void testGetCoordinates() {
-        System.out.println("getCoordinates");
- 
-        assertEquals(testCoordinates2, testDepot2.getCoordinates());
-        assertEquals(testCoordinates3, testDepot3.getCoordinates());
+        
     }
-    
+        
+    @Test
+    public void testRemaingCapacity() {
+        
+            System.out.println("capacity left " + box0.remainingCapacity());
+                    
+            assertEquals(20.0, box0.remainingCapacity(),0);
+            assertEquals(40.0, box1.remainingCapacity(),0);
+            
+            
+            
+            
+            
+            
+            //assertEquals("asdd","1asd");
+            //assertEquals("1 First St\nAplace\nCitadel City\nA111", testAddress1.toString());
+    }
 }
