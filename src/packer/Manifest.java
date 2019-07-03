@@ -56,17 +56,36 @@ public class Manifest {
         //if (quantities.get(p) == 0) {  change 0 to null (returns null when not exist
         
         /// or is null????????????????????????????????????
-        if (quantities.get(p) == 0) {
+        if (quantities.get(p) == 0) {    //needs to get the quantities of how many of that product there are.... 
             quantities.remove(p);
         }
         
+       
+        
+// looking at the code in a new window.....
+        
+//    if (quantities.get(p) == 0) {         should be           if (quantities.containsKey(p) == 0) {
+
+//    actually, that will fail
+
+//     if (quantities.containsKey(p))   {
+
+//    that shoudl work... will tell you how i get on
+
+//    i need to NOT that, so add the  "!"    ......     if (!quantities.containsKey(p))   {
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
 //        if (quantities.get(p) == null) {
 //            quantities.remove(p);
-//        }
-        
-        
-        
-        
+//        }       
         
         //if (quantities.containsKey(p)) {  if not exists
         if (!quantities.containsKey(p)) {
@@ -124,7 +143,14 @@ public class Manifest {
     }
     
     //*****  HAZARDOUS ITEMS
-    
+    public boolean hasHazardousItems() {
+        for (Product p : quantities.keySet()) {
+            if (p.isHazardous()) {
+                return true;
+            }
+        }
+        return false;
+    }    
     
     
 }

@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Packer {
 
+    
     public static List<Box> packProducts(Customer c, Depot d, Manifest m) {
         List<Box> packedBoxes = new ArrayList<>();
         Box b = null;
@@ -18,7 +19,7 @@ public class Packer {
             if (b == null) {
                 
                 //b = new Box(d,c);  swap c & d
-                b = new Box(c,d);
+                b = new Box(c,d,20);
             }
 
             

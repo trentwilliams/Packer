@@ -50,7 +50,7 @@ public class DepotTest {
     @Test
     public void testGetCoordinates() {
         System.out.println("getCoordinates");
- 
+        assertEquals(testCoordinates1, testDepot1.getCoordinates());
         assertEquals(testCoordinates2, testDepot2.getCoordinates());
         assertEquals(testCoordinates3, testDepot3.getCoordinates());
     }

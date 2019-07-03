@@ -33,8 +33,11 @@ public class BoxTest {
     Depot testDepot3 = new Depot("Country Depot", testAddress3);
     
     
-    Box box0 = new Box(customer0, testDepot1,20.0);
-    Box box1 = new Box(customer0, testDepot1,40.0);
+//    Product testProduct0=new Product("test",7,false,false);
+    
+    
+    
+
     
 
 
@@ -49,17 +52,16 @@ public class BoxTest {
     @Test
     public void testRemaingCapacity() {
         
-            System.out.println("capacity left " + box0.remainingCapacity());
-                    
-            assertEquals(20.0, box0.remainingCapacity(),0);
-            assertEquals(40.0, box1.remainingCapacity(),0);
-            
-            
-            
-            
-            
-            
-            //assertEquals("asdd","1asd");
-            //assertEquals("1 First St\nAplace\nCitadel City\nA111", testAddress1.toString());
+        Box box0 = new Box(customer0, testDepot1,0.0);
+        Box box1 = new Box(customer0, testDepot1,20.0);
+        Box box2 = new Box(customer0, testDepot1,40.0);
+        
+        System.out.println("Testing remaining capacity...");
+        assertEquals(0.0, box0.remainingCapacity(),0);
+        assertEquals(20.0, box1.remainingCapacity(),0);
+        assertEquals(40.0, box2.remainingCapacity(),0);
+        
+        //assertEquals("asdd","1asd");
+        //assertEquals("1 First St\nAplace\nCitadel City\nA111", testAddress1.toString());
     }
 }
