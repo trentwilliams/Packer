@@ -35,7 +35,8 @@ public class ManifestTest {
     Depot testDepot2 = new Depot("Suburbs Depot", testAddress2);
     Depot testDepot3 = new Depot("Country Depot", testAddress3);
     
-    Product testProduct0=new Product("test",7,false,false);
+    Product testProduct0=new Product("test product 0",7,false,false);
+    Product testProduct1=new Product("test product 1",3,false,false);
     
     
 
@@ -43,23 +44,19 @@ public class ManifestTest {
     public static void setUpClass() {
         System.out.println("Testing Manifest class...");
         
-        
-        
-
-        
     }
 
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
+//    @AfterClass
+//    public static void tearDownClass() throws Exception {
+//    }
+//
+//    @Before
+//    public void setUp() throws Exception {
+//    }
+//
+//    @After
+//    public void tearDown() throws Exception {
+//    }
         
     @Test
     public void testIsEmpty() {
@@ -76,15 +73,24 @@ public class ManifestTest {
     }
 
     @Test
-    public void testAddProduct(){
+    public void testAddProduct_prod_int(){
         
         System.out.println("Testing add product...");
 
         Manifest manifest = new Manifest();
         
-        manifest.addProduct(testProduct0);
-        System.out.println(""+testProduct0);
-        System.out.println(""+manifest);
+        manifest.addProduct(testProduct0,4);
+        manifest.addProduct(testProduct0,2);
+        
+        
+        
+        
+        assertEquals("test product 0 x 4",manifest.toString());
+
+        
+        
+        manifest.addProduct(testProduct1,2);
+        assertEquals("test product 0 x 4\ntest product 1 x 2",manifest.toString());
         //assertEquals
         
         

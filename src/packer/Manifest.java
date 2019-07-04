@@ -27,6 +27,7 @@ public class Manifest {
     
     public void addProduct(Product p, int quantity) {
         if (quantities.containsKey(p)) {
+            //quantities.put(p,quantities.get(p)*quantity);  change * to +
             quantities.put(p,quantities.get(p)*quantity);
         }
         else {
@@ -60,8 +61,6 @@ public class Manifest {
             quantities.remove(p);
         }
         
-       
-        
 // looking at the code in a new window.....
         
 //    if (quantities.get(p) == 0) {         should be           if (quantities.containsKey(p) == 0) {
@@ -73,15 +72,6 @@ public class Manifest {
 //    that shoudl work... will tell you how i get on
 
 //    i need to NOT that, so add the  "!"    ......     if (!quantities.containsKey(p))   {
-
-        
-        
-        
-        
-        
-        
-        
-        
         
 //        if (quantities.get(p) == null) {
 //            quantities.remove(p);
