@@ -80,17 +80,17 @@ public class ManifestTest {
         Manifest manifest = new Manifest();
         
         manifest.addProduct(testProduct0,4);
-        manifest.addProduct(testProduct0,2);
-        
-        
-        
         
         assertEquals("test product 0 x 4",manifest.toString());
 
-        
-        
         manifest.addProduct(testProduct1,2);
+        
         assertEquals("test product 0 x 4\ntest product 1 x 2",manifest.toString());
+
+
+        manifest.addProduct(testProduct0,2);
+//        
+        assertEquals("test product 0 x 6\ntest product 1 x 2",manifest.toString());
         //assertEquals
         
         
