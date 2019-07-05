@@ -159,6 +159,13 @@ public class ManifestTest {
         
     }
     
+        //public double getTotalWeight() {
+        //public Product getHeaviestUnder(double weight) {
+        //public boolean containsProduct(Product p) {
+        //public boolean hasFragileItems() {
+        //public boolean hasHazardousItems() ()
+        
+    
     
     
     
