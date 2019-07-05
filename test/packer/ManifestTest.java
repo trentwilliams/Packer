@@ -73,7 +73,11 @@ public class ManifestTest {
         Manifest testManifest4 = new Manifest();
 
         testManifest1.addProduct(testProduct1,1);
+        
+        testManifest2.addProduct(testProduct1,1);
         testManifest2.addProduct(testProduct2,1);
+        testManifest2.addProduct(testProduct3,1);
+        
         testManifest3.addProduct(testProduct3,1);
         
         testManifest4.addProduct(testProduct4,1);
@@ -81,7 +85,7 @@ public class ManifestTest {
         testManifest4.addProduct(testProduct4,5);
         
         assertEquals("a x 1",testManifest1.toString());
-        assertEquals("b x 1",testManifest2.toString());
+        assertEquals("a x 1\nb x 1\nc x 1",testManifest2.toString());
         assertEquals("c x 1",testManifest3.toString());
         assertEquals("d x 8",testManifest4.toString());
     }
@@ -96,16 +100,18 @@ public class ManifestTest {
         
         Manifest testManifest1 = new Manifest();
         Manifest testManifest2 = new Manifest();
+        Manifest testManifest3 = new Manifest();
 
         testManifest1.addProduct(testProduct1);
         testManifest2.addProduct(testProduct2);
+        testManifest3.addProduct(testProduct3);
+        testManifest3.addProduct(testProduct3);
         
         
         assertEquals("a x 1",testManifest1.toString());
         assertEquals("b x 1",testManifest2.toString());
+        assertEquals("c x 2",testManifest3.toString());
     }
-    
-    
     
     
     /**
@@ -124,6 +130,37 @@ public class ManifestTest {
         assertEquals(true, testManifest1.isEmpty());
         assertEquals(false, testManifest2.isEmpty());
     }
+    
+    
+    /**
+    * Test of remove product method, of class Manifest.
+     */ 
+    @Test
+    public void testRemoveProduct() {
+        
+        System.out.println("Testing remove product...");
+        
+        Manifest testManifest1 = new Manifest();
+        
+        testManifest1.addProduct(testProduct1,1);
+        testManifest1.addProduct(testProduct2,1);
+        testManifest1.addProduct(testProduct3,1);
+        testManifest1.addProduct(testProduct4,1);
+        
+        assertEquals("a x 1\nb x 1\nc x 1\nd x 1",testManifest1.toString());
+        
+        testManifest1.removeProduct(testProduct2);
+        
+        assertEquals("a x 1\nc x 1\nd x 1",testManifest1.toString());
+
+        testManifest1.removeProduct(testProduct1);
+        
+        assertEquals("c x 1\nd x 1",testManifest1.toString());
+        
+    }
+    
+    
+    
     
     
 }
