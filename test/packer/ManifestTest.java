@@ -9,22 +9,25 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.FixMethodOrder;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.runners.MethodSorters;
 
 /**
  *
  * @author trent
  */
+
 public class ManifestTest {
     
     
      // Test data
+
     Coordinates testCoordinates0 = new Coordinates(1, 1);
     Address testAddress0 = new Address("number", "street", "suburb", "city", testCoordinates0);
-    Customer customer0  = new Customer("test",testAddress0);
-
-
+    Customer customer1  = new Customer("test",testAddress0);
+    
     Coordinates testCoordinates1 = new Coordinates(0,0);
     Coordinates testCoordinates2 = new Coordinates(30,40);
     Coordinates testCoordinates3 = new Coordinates(1000, 2000);
@@ -35,182 +38,92 @@ public class ManifestTest {
     Depot testDepot2 = new Depot("Suburbs Depot", testAddress2);
     Depot testDepot3 = new Depot("Country Depot", testAddress3);
     
-    Product testProduct0=new Product("test product 0",7,false,false);
-    Product testProduct1=new Product("test product 1",3,false,false);
-    
+    Product testProduct1=new Product("a",1,false,false);
+    Product testProduct2=new Product("b",10,true,false);
+    Product testProduct3=new Product("c",100,false,true);    
+    Product testProduct4=new Product("d",1000,true,true);   
+   
     
 
+        
     @BeforeClass
     public static void setUpClass() {
         System.out.println("Testing Manifest class...");
-        
     }
-
 //    @AfterClass
 //    public static void tearDownClass() throws Exception {
 //    }
-//
-//    @Before
+//  @Before
 //    public void setUp() throws Exception {
+//        System.out.println("test before");
 //    }
-//
-//    @After
-//    public void tearDown() throws Exception {
-//    }
+    
+    
+    /**
+    * Test of AddProduct_prod being passed an int method, of class Manifest.
+     */ 
+    @Test
+    public void testAddProduct_prod_int(){
         
+        System.out.println("Testing add product INT...");
+        
+        Manifest testManifest1 = new Manifest();
+        Manifest testManifest2 = new Manifest();
+        Manifest testManifest3 = new Manifest();
+        Manifest testManifest4 = new Manifest();
+
+        testManifest1.addProduct(testProduct1,1);
+        testManifest2.addProduct(testProduct2,1);
+        testManifest3.addProduct(testProduct3,1);
+        
+        testManifest4.addProduct(testProduct4,1);
+        testManifest4.addProduct(testProduct4,2);
+        testManifest4.addProduct(testProduct4,5);
+        
+        assertEquals("a x 1",testManifest1.toString());
+        assertEquals("b x 1",testManifest2.toString());
+        assertEquals("c x 1",testManifest3.toString());
+        assertEquals("d x 8",testManifest4.toString());
+    }
+    
+    /**
+    * Test of AddProduct_prod being passed only product, of class Manifest.
+     */ 
+    @Test
+    public void testAddProduct_prod(){
+        
+        System.out.println("Testing add product ONLY...");
+        
+        Manifest testManifest1 = new Manifest();
+        Manifest testManifest2 = new Manifest();
+
+        testManifest1.addProduct(testProduct1);
+        testManifest2.addProduct(testProduct2);
+        
+        
+        assertEquals("a x 1",testManifest1.toString());
+        assertEquals("b x 1",testManifest2.toString());
+    }
+    
+    
+    
+    
+    /**
+    * Test of isEmpty method, of class Manifest.
+     */ 
     @Test
     public void testIsEmpty() {
         
         System.out.println("Testing is empty...");
         
-        Manifest testManifest1=new Manifest();
+        Manifest testManifest1 = new Manifest();
+        Manifest testManifest2 = new Manifest();
         
+        testManifest2.addProduct(testProduct2,1);
 
         assertEquals(true, testManifest1.isEmpty());
-        //assertEquals(20.0, box1.remainingCapacity(),0);
-        //assertEquals(40.0, box2.remainingCapacity(),0);
-
+        assertEquals(false, testManifest2.isEmpty());
     }
-
-    @Test
-    public void testAddProduct_prod_int(){
-        
-        System.out.println("Testing add product...");
-
-        Manifest manifest = new Manifest();
-        
-        manifest.addProduct(testProduct0,4);
-        
-        assertEquals("test product 0 x 4",manifest.toString());
-
-        manifest.addProduct(testProduct1,2);
-        
-        assertEquals("test product 0 x 4\ntest product 1 x 2",manifest.toString());
-
-
-        manifest.addProduct(testProduct0,2);
-//        
-        assertEquals("test product 0 x 6\ntest product 1 x 2",manifest.toString());
-        //assertEquals
-        
-        
-
-
-//manifest.addProduct(new Product("Hammer", 3, false, false), 1);
-        
-    }
-
-    /**
-     * Test of addProduct method, of class Manifest.
-     */
-//    @Test
-//    public void testAddProduct_Product() {
-////        System.out.println("addProduct");
-////        Product p = null;
-////        Manifest instance = new Manifest();
-////        instance.addProduct(p);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of addProduct method, of class Manifest.
-//     */
-//    @Test
-//    public void testAddProduct_Product_int() {
-////        System.out.println("addProduct");
-////        Product p = null;
-////        int quantity = 0;
-////        Manifest instance = new Manifest();
-////        instance.addProduct(p, quantity);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of removeProduct method, of class Manifest.
-//     */
-//    @Test
-//    public void testRemoveProduct() {
-////        System.out.println("removeProduct");
-////        Product p = null;
-////        Manifest instance = new Manifest();
-////        instance.removeProduct(p);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of getTotalWeight method, of class Manifest.
-//     */
-//    @Test
-//    public void testGetTotalWeight() {
-////        System.out.println("getTotalWeight");
-////        Manifest instance = new Manifest();
-////        double expResult = 0.0;
-////        double result = instance.getTotalWeight();
-////        assertEquals(expResult, result, 0.0);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of getHeaviestUnder method, of class Manifest.
-//     */
-//    @Test
-//    public void testGetHeaviestUnder() {
-////        System.out.println("getHeaviestUnder");
-////        double weight = 0.0;
-////        Manifest instance = new Manifest();
-////        Product expResult = null;
-////        Product result = instance.getHeaviestUnder(weight);
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of containsProduct method, of class Manifest.
-//     */
-//    @Test
-//    public void testContainsProduct() {
-////        System.out.println("containsProduct");
-////        Product p = null;
-////        Manifest instance = new Manifest();
-////        boolean expResult = false;
-////        boolean result = instance.containsProduct(p);
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of toString method, of class Manifest.
-//     */
-//    @Test
-//    public void testToString() {
-////        System.out.println("toString");
-////        Manifest instance = new Manifest();
-////        String expResult = "";
-////        String result = instance.toString();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of hasFragileItems method, of class Manifest.
-//     */
-//    @Test
-//    public void testHasFragileItems() {
-////        System.out.println("hasFragileItems");
-////        Manifest instance = new Manifest();
-////        boolean expResult = false;
-////        boolean result = instance.hasFragileItems();
-////        assertEquals(expResult, result);
-////        // TODO review the generated test code and remove the default call to fail.
-////        fail("The test case is a prototype.");
-//    }
     
     
 }
