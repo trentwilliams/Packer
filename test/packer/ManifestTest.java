@@ -195,9 +195,8 @@ public class ManifestTest {
     @Test
     public void testGetHeaviestUnder(){
         
-        System.out.println("here");
         
-        System.out.println("Testing get total weigth ...");
+        System.out.println("Testing get product of weight under x ...");
         
         Manifest testManifest1 = new Manifest();
         
@@ -206,16 +205,95 @@ public class ManifestTest {
         testManifest1.addProduct(testProduct3,1);
         testManifest1.addProduct(testProduct4,1);
         
+        assertEquals(null,testManifest1.getHeaviestUnder(0));
+        assertEquals(testProduct1,testManifest1.getHeaviestUnder(1));
+        assertEquals(testProduct1,testManifest1.getHeaviestUnder(2));
+        
+        assertEquals(testProduct1,testManifest1.getHeaviestUnder(9));
+        assertEquals(testProduct2,testManifest1.getHeaviestUnder(10));
+        assertEquals(testProduct2,testManifest1.getHeaviestUnder(11));
+        
+        assertEquals(testProduct3,testManifest1.getHeaviestUnder(100));
+        assertEquals(testProduct4,testManifest1.getHeaviestUnder(1000));
+        
     }
     
-
-        //public boolean containsProduct(Product p) {
-        //public boolean hasFragileItems() {
-        //public boolean hasHazardousItems() ()
+        /**
+    * Test if contains x product , of class Manifest.
+    */  
+    @Test
+    public void testContainsProduct(){
         
+        System.out.println("Testing if contains a given product ...");
+        
+        Manifest testManifest1 = new Manifest();
+        
+        testManifest1.addProduct(testProduct1,1);
+        //testManifest1.addProduct(testProduct2,1);
+        testManifest1.addProduct(testProduct3,1);
+        //testManifest1.addProduct(testProduct4,1);
+        
+        assertEquals(true,testManifest1.containsProduct(testProduct1));
+        assertEquals(false,testManifest1.containsProduct(testProduct2));
+        assertEquals(true,testManifest1.containsProduct(testProduct3));
+        assertEquals(false,testManifest1.containsProduct(testProduct4));
+        
+    }
+        
+            /**
+    * Test if contains fragile products , of class Manifest.
+    */  
+    @Test
+    public void testHasFragileItems(){
+        
+        System.out.println("Testing if contains fragile products ...");
+        
+        Manifest testManifest1 = new Manifest();
+        
+        testManifest1.addProduct(testProduct1,1);
+        
+        assertEquals(false,testManifest1.hasFragileItems());
+
+        testManifest1.addProduct(testProduct2,1);
+        
+        assertEquals(false,testManifest1.hasFragileItems());
+        
+        testManifest1.addProduct(testProduct3,1);
+        
+        assertEquals(true,testManifest1.hasFragileItems());
+        
+        testManifest1.addProduct(testProduct4,1);
+        
+        assertEquals(true,testManifest1.hasFragileItems());
+        
+    }
     
-    
-    
-    
+            /**
+    * Test if contains Hazardous products , of class Manifest.
+    */  
+    @Test
+    public void testHasHazardousItems(){
+        
+        System.out.println("Testing if contains hazardous products ...");
+        
+        Manifest testManifest1 = new Manifest();
+        
+        testManifest1.addProduct(testProduct1,1);
+        
+        assertEquals(false,testManifest1.hasHazardousItems());
+
+        testManifest1.addProduct(testProduct3,1);
+        
+        assertEquals(false,testManifest1.hasHazardousItems());
+        
+        testManifest1.addProduct(testProduct2,1);
+        
+        assertEquals(true,testManifest1.hasHazardousItems());
+        
+        testManifest1.addProduct(testProduct4,1);
+        
+        assertEquals(true,testManifest1.hasHazardousItems());
+        
+    }
     
 }
