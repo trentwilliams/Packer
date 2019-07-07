@@ -20,8 +20,8 @@ import org.junit.runners.MethodSorters;
  */
 
 public class ManifestTest {
-    
-    
+
+        //public static final double ACCEPTABLE_DELTA = 0.001; 
      // Test data
 
     Coordinates testCoordinates0 = new Coordinates(1, 1);
@@ -159,8 +159,56 @@ public class ManifestTest {
         
     }
     
-        //public double getTotalWeight() {
-        //public Product getHeaviestUnder(double weight) {
+
+    
+    
+    /**
+    * Test of get total weight, of class Manifest.
+     */     
+    @Test
+    public void testGetTotalWeight() {
+        
+        System.out.println("Testing get total weigth ...");
+        
+        Manifest testManifest1 = new Manifest();
+        
+        testManifest1.addProduct(testProduct1,1);
+        testManifest1.addProduct(testProduct2,1);
+        testManifest1.addProduct(testProduct3,1);
+        testManifest1.addProduct(testProduct4,1);
+        
+        assertEquals(1111.0,testManifest1.getTotalWeight(),0);
+        
+        testManifest1.addProduct(testProduct4,3);
+        
+        testManifest1.addProduct(testProduct2,1);
+        
+        assertEquals(4121.0,testManifest1.getTotalWeight(),0);
+        
+    }
+      
+    
+    
+        /**
+    * Test of get heaviest under x weight, of class Manifest.
+    */  
+    @Test
+    public void testGetHeaviestUnder(){
+        
+        System.out.println("here");
+        
+        System.out.println("Testing get total weigth ...");
+        
+        Manifest testManifest1 = new Manifest();
+        
+        testManifest1.addProduct(testProduct1,1);
+        testManifest1.addProduct(testProduct2,1);
+        testManifest1.addProduct(testProduct3,1);
+        testManifest1.addProduct(testProduct4,1);
+        
+    }
+    
+
         //public boolean containsProduct(Product p) {
         //public boolean hasFragileItems() {
         //public boolean hasHazardousItems() ()
