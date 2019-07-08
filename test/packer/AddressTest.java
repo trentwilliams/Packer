@@ -14,10 +14,10 @@ import org.junit.BeforeClass;
  * @author bunta
  */
 public class AddressTest {
-    
+
     // Test data
-    Coordinates testCoordinates1 = new Coordinates(0,0);
-    Coordinates testCoordinates2 = new Coordinates(30,40);
+    Coordinates testCoordinates1 = new Coordinates(0, 0);
+    Coordinates testCoordinates2 = new Coordinates(30, 40);
     Coordinates testCoordinates3 = new Coordinates(1000, 2000);
     Address testAddress1 = new Address("1 First St", "Aplace", "Citadel City", "A111", testCoordinates1);
     Address testAddress2 = new Address("123 Count St", "Brooklyn", "Welling Town", "B222", testCoordinates2);
@@ -27,7 +27,7 @@ public class AddressTest {
     public static void setUpClass() {
         System.out.println("Testing Address class...");
     }
-    
+
     /**
      * Test of toString method, of class Address.
      */
@@ -49,5 +49,5 @@ public class AddressTest {
         assertEquals(testCoordinates2, testAddress2.getCoordinates());
         assertEquals(testCoordinates3, testAddress3.getCoordinates());
     }
-    
+
 }

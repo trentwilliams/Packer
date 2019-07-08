@@ -5,6 +5,7 @@ package packer;
  * @author I.M.Bad
  */
 public class Address {
+
     private String street;
     private String suburb;
     private String city;
@@ -20,12 +21,12 @@ public class Address {
     }
 
     public String toString() {
-        return 
-                street + "\n" +
-                suburb + "\n" +
-                city + "\n" +
-                postcode;
+        return street + "\n"
+                + suburb + "\n"
+                + city + "\n"
+                + postcode;
     }
+
     /**
      * @return the coordinates
      */
@@ -33,5 +34,4 @@ public class Address {
         return coordinates;
     }
 
-    
 }

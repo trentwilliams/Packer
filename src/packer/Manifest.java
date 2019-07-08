@@ -11,84 +11,51 @@ import java.util.TreeSet;
  * @author I.M.Bad
  */
 public class Manifest {
-    
+
     // This tracks the quantity if each product in the manifest
-    private Map<Product, Integer> quantities;  
-    
+    private Map<Product, Integer> quantities;
+
     // This keeps a list of all products ordered by weight
     private Set<Product> byWeight;
 
     public Manifest() {
         //quantities = new HashMap<>();   //change to LinkedHashMap 
-        quantities = new LinkedHashMap<>();   //Linked 
+        quantities = new LinkedHashMap<>();
         byWeight = new TreeSet<>(new ProductWeightComparator());
     }
-    
+
     public void addProduct(Product p) {
-        addProduct(p,1);
+        addProduct(p, 1);
     }
-    
+
     public void addProduct(Product p, int quantity) {
         if (quantities.containsKey(p)) {
             //quantities.put(p,quantities.get(p)*quantity);  change * to +
-            quantities.put(p,quantities.get(p)+quantity);
-        }
-        else {
-            quantities.put(p,quantity);
-            if(!byWeight.add(p)) {
+            quantities.put(p, quantities.get(p) + quantity);
+        } else {
+            quantities.put(p, quantity);
+            if (!byWeight.add(p)) {
                 System.out.println("Couldn't add to Set");
             }
         }
     }
-    
-    // removes products from manifest quantities and weight this  orignal 
-//    public void removeProduct(Product p) {
-//        if (quantities.containsKey(p) && quantities.get(p) > 0) {
-//            quantities.put(p,quantities.get(p)-1);
-//        }
-//        if (quantities.get(p) == 0) {
-//            quantities.remove(p);
-//        }
-//        if (quantities.containsKey(p)) {
-//            byWeight.remove(p);
-//        }
-//    }
+
+    // removes products from manifest quantities and weight 
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
-            quantities.put(p,quantities.get(p)-1);
+            quantities.put(p, quantities.get(p) - 1);
         }
-        //if (quantities.get(p) == 0) {  change 0 to null (returns null when not exist
-        
-        /// or is null????????????????????????????????????
-        if (quantities.get(p) == 0) {    //needs to get the quantities of how many of that product there are.... 
+
+        if (quantities.get(p) == 0) {
             quantities.remove(p);
         }
-        
-// looking at the code in a new window.....
-        
-//    if (quantities.get(p) == 0) {         should be           if (quantities.containsKey(p) == 0) {
 
-//    actually, that will fail
-
-//     if (quantities.containsKey(p))   {
-
-//    that shoudl work... will tell you how i get on
-
-//    i need to NOT that, so add the  "!"    ......     if (!quantities.containsKey(p))   {
-        
-//        if (quantities.get(p) == null) {
-//            quantities.remove(p);
-//        }       
-        
         //if (quantities.containsKey(p)) {  if not exists
         if (!quantities.containsKey(p)) {
             byWeight.remove(p);
         }
     }
-    
-    
-    
-    
+
     public double getTotalWeight() {
         double weight = 0;
         for (Product p : quantities.keySet()) {
@@ -97,7 +64,7 @@ public class Manifest {
         }
         return weight;
     }
-    
+
     public Product getHeaviestUnder(double weight) {
         for (Product p : byWeight) {
             if (p.getWeight() <= weight) {
@@ -106,15 +73,15 @@ public class Manifest {
         }
         return null;
     }
-    
+
     public boolean isEmpty() {
         return byWeight.isEmpty();
     }
-    
+
     public boolean containsProduct(Product p) {
         return quantities.containsKey(p) && quantities.get(p) > 0;
     }
-    
+
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Product p : quantities.keySet()) {
@@ -123,9 +90,9 @@ public class Manifest {
             result.append(quantities.get(p));
             result.append("\n");
         }
-        return result.substring(0, result.length()-1);
+        return result.substring(0, result.length() - 1);
     }
-    
+
     public boolean hasFragileItems() {
         for (Product p : quantities.keySet()) {
             if (p.isFragile()) {
@@ -134,7 +101,7 @@ public class Manifest {
         }
         return false;
     }
-    
+
     //*****  HAZARDOUS ITEMS
     public boolean hasHazardousItems() {
         for (Product p : quantities.keySet()) {
@@ -143,7 +110,6 @@ public class Manifest {
             }
         }
         return false;
-    }    
-    
-    
+    }
+
 }

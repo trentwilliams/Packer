@@ -65,6 +65,8 @@ public class BoxTest {
 
         testBox1.addProduct(testProduct1);
         assertEquals(19.0, testBox1.remainingCapacity(), 0);
+        //System.out.println("product " + testBox1.contains(testProduct1));
+        System.out.println("box "+ testBox1);
 
         testBox1.addProduct(testProduct2);
         assertEquals(17.0, testBox1.remainingCapacity(), 0);

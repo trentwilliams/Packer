@@ -46,14 +46,13 @@ public class Example {
         manifest.addProduct(new Product("Saw", 5, false, false), 1);
         manifest.addProduct(new Product("Light Bulbs", 1, false, true), 20);
         manifest.addProduct(new Product("Weedkiller", 2, true, false), 1);
-        
+
 //        manifest.addProduct(new Product("Hammer", 3, false, false), 15);
 //        manifest.addProduct(new Product("Nails", 1, false, false), 12);
 //        manifest.addProduct(new Product("Ladder", 15, false, false), 2);
 //        manifest.addProduct(new Product("Saw", 5, false, false), 1);
 //        manifest.addProduct(new Product("Light Bulbs", 1, false, true), 20);
 //        manifest.addProduct(new Product("Weedkiller", 2, true, false), 18);
-
         // specifiy the capatcity of a box
         double boxCapacity = 20;
 

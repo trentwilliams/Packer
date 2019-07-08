@@ -50,13 +50,13 @@ public class Product {
     public String toString() {
         return this.getName();
     }
-    
+
     public boolean equals(Object o) {
         if (!(o instanceof Product)) {
             return false;
         }
-        Product p = (Product)o;
+        Product p = (Product) o;
         return p.getName().equals(this.getName());
     }
-    
+
 }
