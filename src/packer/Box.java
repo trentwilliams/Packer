@@ -50,9 +50,13 @@ public class Box {
         if (this.isFragile()) {
             label.append("FRAGILE\n");
         }
+        if (this.isHazardous()) {
+            label.append("HAZARDOUS\n");
+        }
         return label.toString();
     }
     
+    @Override
     public String toString() {
         return getLabel();
     }
@@ -89,6 +93,7 @@ public class Box {
     }
     
     public boolean isHazardous() {
-        return false;
+        //return false; needs to return contest has fragile
+        return contents.hasHazardousItems();
     }
 }
