@@ -71,8 +71,8 @@ public class Box {
     
     public boolean canFit(Product p) {
         
-        System.out.println("box contents " + this.getWeight());
-        System.out.println("product " + p.getWeight());
+//        System.out.println("box contents " + this.getWeight());
+//        System.out.println("product " + p.getWeight());
         
         
         //return p.getWeight() < 20;  comparing against 20 always
