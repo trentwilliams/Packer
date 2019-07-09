@@ -160,11 +160,11 @@ public class BoxTest {
 
         testBox1.addProduct(testProduct2, 1);
 
-        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nb x 1\nHAZARDOUS\n", testBox1.getLabel());
+        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nb x 1\nHAZARDOUS\n", testBox1.getLabel());  //use hamcrest
 
         testBox1.addProduct(testProduct4, 1);
 
-        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nb x 1\nd x 1\nFRAGILE\nHAZARDOUS\n", testBox1.getLabel());
+        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nb x 1\nd x 1\nFRAGILE\nHAZARDOUS\n", testBox1.getLabel());  //use hamcrest
 
         testBox2.addProduct(testProduct3, 1);
 
@@ -235,7 +235,7 @@ public class BoxTest {
         assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\n", testBox1.toString());
 
         testBox1.addProduct(testProduct3, 3);
-        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nc x 3\nFRAGILE\n", testBox1.getLabel());
+        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nc x 3\nFRAGILE\n", testBox1.getLabel());  //use hamcrest
 
     }
 

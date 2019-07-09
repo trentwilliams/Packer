@@ -10,7 +10,13 @@ public class Box {
     private Customer customer;
     private Depot depot;
     private double capacity;
-
+    /**
+ *
+ * used to create the box
+ * @param customer the customer 
+ * @param depot the depot the good will be dispatched from
+ * @param capacity the size of the box
+ */
     public Box(Customer customer, Depot depot, double capacity) {
         this.customer = customer;
         this.depot = depot;
@@ -18,6 +24,10 @@ public class Box {
         contents = new Manifest();
     }
 
+    /**
+     * adds 1x product to box
+     * @param product the product to add
+     */
     // adding a product to the box
     public void addProduct(Product product) {
         if (canFit(product)) {
@@ -30,6 +40,11 @@ public class Box {
 //            contents.addProduct(product, 1);
 //        }
 //    }  
+    /**
+     * @param product the product to add
+     * @param quantity they number of items to add
+     * adds quantity x product to box
+     */
     public void addProduct(Product product, int quantity) {
         if (canFit(product, quantity));
         {
@@ -37,6 +52,9 @@ public class Box {
         }
     }
 
+    /**
+     * @return the label of the box
+     */
     public String getLabel() {
         StringBuilder label = new StringBuilder();
         label.append(customer);
@@ -54,17 +72,28 @@ public class Box {
         return label.toString();
     }
 
+    /**
+     *
+     * @return the label of the box
+     */
     @Override
     public String toString() {
         return getLabel();
     }
 
+    /**
+     * @return the weight of the box
+     */
     public double getWeight() {
         //return contents.getWeight();
         return contents.getTotalWeight();
 
     }
 
+    /**
+     * @param p product to try
+     * @return the given product x1 can fit in box
+     */
     public boolean canFit(Product p) {
 
 //        System.out.println("box contents " + this.getWeight());
@@ -74,18 +103,32 @@ public class Box {
 
     }
 
+    /**
+     * @param quantity the number of items to try
+     * @param p product to try
+     * @return the given product x quantity can fit in box
+     */
     public boolean canFit(Product p, int quantity) {
         return (p.getWeight() * quantity) < this.capacity;
     }
 
+    /**
+     * @return how much space is left in box
+     */
     public double remainingCapacity() {
         return this.capacity - this.getWeight();
     }
 
+    /**
+     * @return if box contains fragile item
+     */
     public boolean isFragile() {
         return contents.hasFragileItems();
     }
 
+    /**
+     * @return if box contains hazardous item
+     */
     public boolean isHazardous() {
         //return false; needs to return contest has hazardous
         return contents.hasHazardousItems();

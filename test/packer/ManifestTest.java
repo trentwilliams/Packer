@@ -79,7 +79,7 @@ public class ManifestTest {
         testManifest4.addProduct(testProduct4, 5);
 
         assertEquals("a x 1", testManifest1.toString());
-        assertEquals("a x 1\nb x 1\nc x 1", testManifest2.toString());
+        assertEquals("a x 1\nb x 1\nc x 1", testManifest2.toString());  //use hamcrest
         assertEquals("c x 1", testManifest3.toString());
         assertEquals("d x 8", testManifest4.toString());
     }
@@ -138,15 +138,15 @@ public class ManifestTest {
         testManifest1.addProduct(testProduct3, 1);
         testManifest1.addProduct(testProduct4, 1);
 
-        assertEquals("a x 1\nb x 1\nc x 1\nd x 1", testManifest1.toString());
+        assertEquals("a x 1\nb x 1\nc x 1\nd x 1", testManifest1.toString());  //use hamcrest
 
         testManifest1.removeProduct(testProduct2);
 
-        assertEquals("a x 1\nc x 1\nd x 1", testManifest1.toString());
+        assertEquals("a x 1\nc x 1\nd x 1", testManifest1.toString());  //use hamcrest
 
         testManifest1.removeProduct(testProduct1);
 
-        assertEquals("c x 1\nd x 1", testManifest1.toString());
+        assertEquals("c x 1\nd x 1", testManifest1.toString());  //use hamcrest
 
     }
 
@@ -278,6 +278,22 @@ public class ManifestTest {
         testManifest1.addProduct(testProduct4, 1);
 
         assertEquals(true, testManifest1.hasHazardousItems());
+
+    }
+    
+    
+        @Test
+    public void testToString() {
+
+//        System.out.println("Testing get label ...");
+//
+//        Box testBox1 = new Box(customer1, testDepot1, 20.0);
+//
+//        testBox1.addProduct(testProduct1, 1);
+//        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\n", testBox1.toString());
+//
+//        testBox1.addProduct(testProduct3, 3);
+//        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nc x 3\nFRAGILE\n", testBox1.getLabel());
 
     }
 
