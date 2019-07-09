@@ -7,6 +7,9 @@ import java.util.List;
  *
  * @author bunta
  */
+/**
+* The Packer class converts a manifest (order) into boxes, by packing efficiently
+*/
 public class Packer {
 
     public static List<Box> packProducts(Customer c, Depot d, Manifest m, double boxCapacity) {

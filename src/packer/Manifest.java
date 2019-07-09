@@ -10,6 +10,9 @@ import java.util.TreeSet;
  *
  * @author I.M.Bad
  */
+/**
+* The Manifest is a collection of products, it can provide details on items and weight related tasks of items in the manifest
+*/
 public class Manifest {
 
     // This tracks the quantity if each product in the manifest

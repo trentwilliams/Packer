@@ -4,6 +4,9 @@ package packer;
  *
  * @author I.M.Bad
  */
+/**
+* The Product class contains product info
+*/
 public class Product {
 
     private String name;

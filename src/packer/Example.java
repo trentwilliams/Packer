@@ -20,6 +20,9 @@ import packer.Product;/*
  *
  * @author trent
  */
+/**
+* This is an example of all classes being used
+*/
 public class Example {
 
     /**

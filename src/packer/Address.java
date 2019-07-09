@@ -1,9 +1,13 @@
+
 package packer;
 
 /**
  *
  * @author I.M.Bad
  */
+/**
+* The Address class handles the address and also the coordinates of a customer or depot
+*/
 public class Address {
 
     private String street;

@@ -4,6 +4,9 @@ package packer;
  *
  * @author I.M.Bad
  */
+/**
+* The Depot class contains depot name and addresses
+*/
 public class Depot {
 
     private String name;

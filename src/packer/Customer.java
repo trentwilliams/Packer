@@ -7,6 +7,9 @@ import java.util.List;
  *
  * @author I.M.Bad
  */
+/**
+* The Customer class contains customer name and addresses
+*/
 public class Customer {
 
     private String name;

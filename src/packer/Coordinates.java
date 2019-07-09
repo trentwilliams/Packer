@@ -4,7 +4,9 @@ package packer;
  *
  * @author I.M.Bad
  */
-
+/**
+* The Coordinates class is used for address locations and to work out distances between coordinates
+*/
 public class Coordinates {
 
     private final double x;

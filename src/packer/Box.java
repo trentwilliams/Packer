@@ -4,6 +4,9 @@ package packer;
  *
  * @author I.M.Bad
  */
+/**
+* The Box class contains items and holds the customer and contents details via a manifest
+*/
 public class Box {
 
     private Manifest contents;
