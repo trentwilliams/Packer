@@ -145,6 +145,33 @@ public class BoxTest {
         assertEquals(true, testBox1.isFragile());
 
     }
+    
+        @Test
+    public void testIsHeavy() {
+
+        System.out.println("Testing is Heavy ...");
+
+        Box testBox1 = new Box(customer1, testDepot1, 20.0);
+
+        testBox1.addProduct(testProduct1, 1);
+
+        assertEquals(false, testBox1.isHeavy());
+
+        testBox1.addProduct(testProduct1, 13);
+        assertEquals(false, testBox1.isHeavy());
+
+        testBox1.addProduct(testProduct1, 1);
+        assertEquals(false, testBox1.isHeavy());
+
+        testBox1.addProduct(testProduct1, 1);
+        assertEquals(true, testBox1.isHeavy());
+        
+        testBox1.addProduct(testProduct1, 1);
+        assertEquals(true, testBox1.isHeavy());
+
+    }
+    
+    
 
     @Test
     public void testGetLabel() {

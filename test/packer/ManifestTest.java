@@ -280,21 +280,19 @@ public class ManifestTest {
         assertEquals(true, testManifest1.hasHazardousItems());
 
     }
-    
-    
-        @Test
+
+    @Test
     public void testToString() {
 
-//        System.out.println("Testing get label ...");
-//
-//        Box testBox1 = new Box(customer1, testDepot1, 20.0);
-//
-//        testBox1.addProduct(testProduct1, 1);
-//        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\n", testBox1.toString());
-//
-//        testBox1.addProduct(testProduct3, 3);
-//        assertEquals("test\nnumber\nstreet\nsuburb\ncity\na x 1\nc x 3\nFRAGILE\n", testBox1.getLabel());
+        System.out.println("Testing to string ...");
 
+        Manifest testManifest1 = new Manifest();
+
+        testManifest1.addProduct(testProduct1, 1);
+        assertEquals("a x 1", testManifest1.toString());
+
+        testManifest1.addProduct(testProduct2, 1);
+        assertEquals("a x 1\nb x 1", testManifest1.toString());
     }
 
 }

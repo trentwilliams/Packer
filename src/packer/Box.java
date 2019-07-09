@@ -72,6 +72,9 @@ public class Box {
         if (this.isHazardous()) {
             label.append("HAZARDOUS\n");
         }
+        if (this.isHeavy()) {
+            label.append("HEAVY\n");
+        }
         return label.toString();
     }
 
@@ -135,5 +138,18 @@ public class Box {
     public boolean isHazardous() {
         //return false; needs to return contest has hazardous
         return contents.hasHazardousItems();
+    }
+    
+        /**
+     * @return if box is considered heavy
+     */
+    public boolean isHeavy() {
+        if (contents.getTotalWeight()>15){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
 }
