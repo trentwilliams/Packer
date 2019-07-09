@@ -25,7 +25,6 @@ public class Customer {
     /**
  *
  * used to add an address
- * @param name name of the customer
  * @param address the address of the customer
  */
     public void addAddress(Address address) {
