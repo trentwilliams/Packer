@@ -25,7 +25,7 @@ public class AddressTest {
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Testing Address class...");
+        System.out.println("\n#############################\nTesting Address class...");
     }
 
     /**
@@ -44,7 +44,7 @@ public class AddressTest {
      */
     @Test
     public void testGetCoordinates() {
-        System.out.println("getCoordinates");
+        System.out.println("Testing getCoordinates");
         assertEquals(testCoordinates1, testAddress1.getCoordinates());
         assertEquals(testCoordinates2, testAddress2.getCoordinates());
         assertEquals(testCoordinates3, testAddress3.getCoordinates());

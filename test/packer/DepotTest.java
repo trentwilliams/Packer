@@ -29,7 +29,7 @@ public class DepotTest {
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Testing Depot class...");
+        System.out.println("\n#############################\nTesting Depot class...");
     }
 
     /**
@@ -37,7 +37,7 @@ public class DepotTest {
      */
     @Test
     public void testGetName() {
-        System.out.println("toString");
+        System.out.println("testing toString");
         assertEquals("City Depot", testDepot1.getName());
         assertEquals("Suburbs Depot", testDepot2.getName());
         assertEquals("Country Depot", testDepot3.getName());
@@ -48,7 +48,7 @@ public class DepotTest {
      */
     @Test
     public void testGetCoordinates() {
-        System.out.println("getCoordinates");
+        System.out.println("testing getCoordinates");
         assertEquals(testCoordinates1, testDepot1.getCoordinates());
         assertEquals(testCoordinates2, testDepot2.getCoordinates());
         assertEquals(testCoordinates3, testDepot3.getCoordinates());

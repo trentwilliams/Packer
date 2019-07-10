@@ -29,11 +29,12 @@ public class ProductTest {
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Testing Product class...");
+        System.out.println("\n#############################\nTesting Product class...");
     }
 
     @Test
     public void testEquals() {
+        System.out.println("Testing equals...");
         assertEquals(true, a1.equals(a1));
         assertEquals(true, a2.equals(a1));
         assertEquals(true, a3.equals(a1));
@@ -51,6 +52,7 @@ public class ProductTest {
 
     @Test
     public void testGetWeight() {
+        System.out.println("Testing get weight ...");
         assertEquals(2, a2.getWeight());
         assertEquals(3, a3.getWeight());
         assertEquals(4, a4.getWeight());
@@ -58,12 +60,14 @@ public class ProductTest {
 
     @Test
     public void testIsHazardous() {
+        System.out.println("Testing isHazardous...");
         assertEquals(true, a1.isHazardous());
         assertEquals(false, a3.isHazardous());
     }
 
     @Test
     public void testIsFragile() {
+        System.out.println("Testing isFragile...");
         assertEquals(true, a1.isFragile());
         assertEquals(false, a4.isFragile());
     }

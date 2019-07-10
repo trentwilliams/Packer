@@ -38,7 +38,7 @@ public class BoxTest {
 //    Product testProduct0=new Product("test",7,false,false);
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Testing Box class...");
+        System.out.println("\n#############################\nTesting Box class...");
 
     }
 
@@ -66,7 +66,7 @@ public class BoxTest {
         testBox1.addProduct(testProduct1);
         assertEquals(19.0, testBox1.remainingCapacity(), 0);
         //System.out.println("product " + testBox1.contains(testProduct1));
-        System.out.println("box "+ testBox1);
+        //System.out.println("box "+ testBox1);
 
         testBox1.addProduct(testProduct2);
         assertEquals(17.0, testBox1.remainingCapacity(), 0);

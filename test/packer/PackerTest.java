@@ -36,7 +36,7 @@ public class PackerTest {
     @BeforeClass
     public static void setUpClass() {
 
-        System.out.println("Testing Packer class...");
+        System.out.println("\n#############################\nTesting Packer class...");
 
     }
 

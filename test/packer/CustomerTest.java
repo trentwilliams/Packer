@@ -37,7 +37,7 @@ public class CustomerTest {
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Testing Customer class...");
+        System.out.println("\n#############################\nTesting Customer class...");
     }
 
     /**
@@ -46,7 +46,7 @@ public class CustomerTest {
     @Test
     public void testGetClosestAddressTo() {
         // Maybe this should be broken int three tests.
-        System.out.println("getClosestAddressTo");
+        System.out.println("testing getClosestAddressTo");
         Customer testCustomer;
 
         testCustomer = new Customer("Test Customer", testAddress3);

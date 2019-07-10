@@ -30,5 +30,6 @@ import packer.ProductTest;
 })
 
 public class TestSuite {
+    
     // No code required here.
 }

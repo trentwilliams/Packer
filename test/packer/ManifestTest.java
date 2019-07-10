@@ -43,7 +43,7 @@ public class ManifestTest {
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Testing Manifest class...");
+        System.out.println("\n#############################\nTesting Manifest class...");
     }
 //    @AfterClass
 //    public static void tearDownClass() throws Exception {
